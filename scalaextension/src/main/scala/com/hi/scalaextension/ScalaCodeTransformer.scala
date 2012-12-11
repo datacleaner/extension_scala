@@ -47,7 +47,7 @@ class ScalaCodeTransformer(cols: Array[InputColumn[_]]) extends Transformer[java
     cls = (new Eval).compileCode("ScalaTransformer", sourceCode, true)
     instance = cls.newInstance().asInstanceOf[Transformation]
   }
-
+ 
   def getOutputColumns() = {
     val columnNames = Array("ScalaOutput")
     val columnTypes: Array[java.lang.Class[_]] = Array(returnType)
