@@ -20,7 +20,6 @@ import scala.collection.JavaConversions._
 class ScalaCodeTransformer(cols: Array[InputColumn[_]]) extends Transformer[java.lang.Object] {
 
   @Configured
-  @Description("Column to compute string lengths from")
   var columns: Array[InputColumn[_]] = cols;
 
   @Configured
