@@ -3,9 +3,9 @@ package com.hi.scalaextension
 import org.junit.Test
 import org.scalatest.junit.AssertionsForJUnit
 import org.scalatest.junit.JUnitSuite
-import org.eobjects.analyzer.data.MockInputColumn
 import org.junit.Assert._
-import org.eobjects.analyzer.data.MockInputRow
+import org.datacleaner.data.MockInputRow
+import org.datacleaner.data.MockInputColumn
 
 class ScalaCodeTransformerTest extends AssertionsForJUnit {
 

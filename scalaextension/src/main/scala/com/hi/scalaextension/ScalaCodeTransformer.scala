@@ -1,23 +1,22 @@
 package com.hi.scalaextension
 
-import org.eobjects.analyzer.beans.api.Transformer
-import org.eobjects.analyzer.beans.api.TransformerBean
-import org.eobjects.analyzer.beans.api.Description
-import org.eobjects.analyzer.beans.api.Categorized
-import org.eobjects.analyzer.beans.categories.StringManipulationCategory
-import org.eobjects.analyzer.data.InputColumn
-import org.eobjects.analyzer.beans.api.Configured
-import org.eobjects.analyzer.beans.api.OutputColumns
-import org.eobjects.analyzer.data.InputRow
-import org.eobjects.analyzer.beans.categories.ScriptingCategory
-import org.eobjects.analyzer.beans.api.StringProperty
-import org.eobjects.analyzer.beans.api.Initialize
 import scala.collection.JavaConversions._
+import javax.inject.Named
+import org.datacleaner.api.InputColumn
+import org.datacleaner.api.StringProperty
+import org.datacleaner.api.OutputColumns
+import org.datacleaner.api.InputRow
+import org.datacleaner.api.Initialize
+import org.datacleaner.api.Categorized
+import org.datacleaner.api.Description
+import org.datacleaner.api.Configured
+import org.datacleaner.api.Transformer
+import org.datacleaner.components.categories.ScriptingCategory
 
-@TransformerBean("Scala Transformer")
+@Named("Scala Transformer")
 @Description("Supply your own piece of Scala code to do a custom transformation.")
 @Categorized(Array(classOf[ScriptingCategory]))
-class ScalaCodeTransformer(cols: Array[InputColumn[_]]) extends Transformer[java.lang.Object] {
+class ScalaCodeTransformer(cols: Array[InputColumn[_]]) extends Transformer {
 
   @Configured
   var columns: Array[InputColumn[_]] = cols;
